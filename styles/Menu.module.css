@@ -1,0 +1,30 @@
+.main {
+  box-shadow: 0 3px 6px rgba(0,0,0,.15);
+}
+.headerContent {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.nav {
+  color: #0E448D;
+}
+.nav a {
+  margin: 0 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.socialMedia svg {
+  color: #0E448D;
+  font-size: 1.5em;
+  border: 2px solid #0E448D;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  margin: 5px;
+}

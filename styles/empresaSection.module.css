@@ -1,0 +1,40 @@
+.empresasection {
+  background-color: #F1F1F1;
+  padding: 5rem 0;
+}
+.empresacontent {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.empresacontentTxt {
+  color: #313131;
+  max-width: 45%;
+}
+.empresacontentTxt h2 {
+  font-size: 2.8rem;
+}
+.empresacontentTxt span {
+  text-transform: uppercase;
+}
+.empresacontentTxt p {
+  font-weight: 600;
+  line-height: 3;
+}
+.btnlink {
+  text-align: center;
+  background-color: #0E448D !important;
+  color: #FFFFFF;
+  border: 1px solid transparent;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  border-radius: 10px;
+}
+.imageEmpresa {
+  box-shadow: 0 3px 5px rgba(0,0,0,.3);
+}
