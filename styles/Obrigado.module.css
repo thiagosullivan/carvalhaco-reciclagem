@@ -1,0 +1,34 @@
+.thanksPage main {
+  text-align: center;
+  height: calc(100vh - 86px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/carvalho-logo-2-opacity.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.thanksPage main h1 {
+  color: #0E448D;
+}
+
+.thanksPage p {
+  font-weight: bold;
+  color: #313131;
+}
+
+.thanksBack {
+  display: flex;
+  align-items: center;
+  background-color: #0E448D;
+  color: #ffffff;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+.thanksBack:hover {
+  transform: scale(0.95);
+}

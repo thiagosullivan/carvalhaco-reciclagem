@@ -1,14 +1,18 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import { Menu } from '../components/menu';
-import imageUrlBuilder from '@sanity/image-url';
-import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+
+import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
 
-import BannerImage from '../assets/banner-home.jpg';
+import { Menu } from '../components/menu';
 import { EmpresaSection } from '../components/empresaSection';
+import { FormHome } from '../components/homeForm';
+
+import BannerImage from '../assets/banner-home.jpg';
+
+import styles from '../styles/Home.module.css';
 
 export default function Home({ posts }) {
   console.log(posts)
@@ -26,15 +30,14 @@ export default function Home({ posts }) {
         posts.map(p => {
           return {
             ...p,
-            mainImage: imgBuilder.image(p.mainImage).width(500).height(250),            
+            mainImage: imgBuilder.image(p.mainImage).width(350).height(350),            
           }
         })
-      )
+      )      
     } else {
       setMappedPosts([]);
     }
   }, [posts])
-
 
   return (
     <>
@@ -47,13 +50,14 @@ export default function Home({ posts }) {
         <Image className={styles.bannerImg} src={BannerImage} />
       </div>
       <EmpresaSection />
+      <FormHome />
       <div className={styles.main}>
         <h1>Welcome to My Blog</h1>
 
         <h3> Recent Posts:</h3>
         
         <div className={styles.feed}>
-          {mappedPosts.length ? mappedPosts.map((p, index) => (
+          {mappedPosts.length ? mappedPosts.slice( 1, 4 ).map((p, index) => (
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={p.title} className={styles.post}>              
               <img src={p.mainImage} className={styles.mainImage} />
               <h3>{p.title}</h3>

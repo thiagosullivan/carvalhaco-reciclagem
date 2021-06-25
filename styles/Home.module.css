@@ -1,32 +1,16 @@
-/* .main h1, .main h3 {
-  text-align: center;
-}
-.feed {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.posts {
-  margin: 25px;
-  width: 500px;
-  height: 316px;
-  cursor: pointer;
-  text-align: center;
-  max-width: calc(100vw - 50px);
-}
-.mainImage {
-  width: 500px;
-  transition: 0.2s;
-  border-radius: 5px;
-  max-width: calc(100vw - 50px);
-  box-shadow: 0px 0px 2px black;
-}
-.post:hover .mainImage {
-  width: 490px;
-  transition: 0.2s;
-} */
-
 .banner {
   display: flex;
   justify-content: center;
+}
+.feed {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.post {
+  max-width: 350px;
+  width: 100%;
+  
 }

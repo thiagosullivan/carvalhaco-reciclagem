@@ -12,18 +12,22 @@ export const Menu = () => {
   return (
     <header className={styles.main}>
       <div className={styles.headerContent}>
-        <Image className={styles.logoHeader} src={logoNav} />
+        <Link href="/">
+          <a>
+            <Image className={styles.logoHeader} src={logoNav} />
+          </a>
+        </Link>
         <nav className={styles.nav}>
           <Link href="/">
             <a>Home</a>
           </Link>
-          <Link href="/">
+          <Link href="/servicos">
             <a>Serviços</a>
           </Link>
           <Link href="/empresa">
             <a>Empresa</a>
           </Link>
-          <Link href="/">
+          <Link href="/contato">
             <a>Contato</a>
           </Link>
         </nav>

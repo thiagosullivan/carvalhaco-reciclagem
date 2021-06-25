@@ -4,7 +4,7 @@ import styles from '../../styles/Post.module.css';
 import BlockContent from '@sanity/block-content-to-react';
 import { Menu } from '../../components/menu';
 
-export const Post = ({ title, body, desc, image }) => {
+export const Post = ({ title, body, desc, image, date, author }) => {
   const [imageUrl, setImageUrl] = useState('');
 
   useEffect(() => {
@@ -21,7 +21,8 @@ export const Post = ({ title, body, desc, image }) => {
       <div className={styles.main}>
         <h1>{title}</h1>
       {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
-
+      {author}
+      {new Date(date).toLocaleDateString()}
       <div className={styles.body}>
         <BlockContent blocks={body} />
       </div>
@@ -44,7 +45,6 @@ export const getServerSideProps = async pageContext => {
   
   const result = await fetch(url).then(res => res.json());
   const post = result.result[0];
-
   if (!post){
     return {
       notFound: true
@@ -56,6 +56,8 @@ export const getServerSideProps = async pageContext => {
         title: post.title,
         image: post.mainImage,
         desc: post.desc,
+        date: post.publishedAt,
+        author: post.author,
       }
     }
   }
