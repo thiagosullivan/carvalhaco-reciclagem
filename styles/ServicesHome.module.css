@@ -1,0 +1,92 @@
+.servicesHomeSection {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  color: #313131;
+}
+.servicesHomeSection h2 {
+  font-size: 2.8rem;
+}
+.servicesHomeSection h2:after {
+  content: '';
+  display: block;
+  border-bottom: 8px solid #313131;
+  margin-top: 1rem;
+  width: 5rem;
+}
+.servicesHomeSection p {
+  font-weight: bold;
+}
+.servicesHomeCard {
+  background-color: #F1F1F1;
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0,0,0,.2);
+  margin: 3rem auto;
+  min-height: 200px;
+}
+.servicesCardLeft {
+  flex: 3;
+  margin: 0 .5rem 0 1rem;
+}
+.servicesCardRight {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.servicesCardRight button {
+  background-color: #0E448D;
+  border: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 2rem;
+  border-radius: 20px;
+  cursor: pointer;  
+}
+.servicesCardLeft strong {
+  font-size: 1.5rem;
+}
+.servicesCardLeft p {
+  font-weight: 400;
+}
+
+@media screen and (max-width: 980px){
+  .servicesHomeSection h2 {
+    text-align: center;
+  }
+  .servicesHomeSection h2:after {
+    margin: 1rem auto 0;
+  }
+  .servicesHomeSection p {
+    text-align: center;
+  }
+  .servicesHomeCard {
+    width: 90%;
+  }
+  .servicesCardLeft p {
+    text-align: justify;
+    margin-right: 1.2rem;
+  }
+}
+@media screen and (max-width: 720px){
+  .servicesHomeCard {
+    flex-direction: column;
+  }
+  .servicesCardLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 1rem;
+  }
+  .servicesCardLeft p {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 420px){
+  .servicesHomeCard {
+    padding: 2rem 1rem;
+  }
+}

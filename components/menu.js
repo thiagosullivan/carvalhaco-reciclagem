@@ -27,6 +27,9 @@ export const Menu = () => {
           <Link href="/empresa">
             <a>Empresa</a>
           </Link>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
           <Link href="/contato">
             <a>Contato</a>
           </Link>

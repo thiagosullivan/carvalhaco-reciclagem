@@ -1,27 +1,16 @@
 import { useState, useEffect } from 'react';
-
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import imageUrlBuilder from '@sanity/image-url';
-import BlockContent from '@sanity/block-content-to-react';
 
 import { Menu } from '../components/menu';
-import { MenuMobile } from '../components/menuMobile';
-import { EmpresaSection } from '../components/empresaSection';
-import { FormHome } from '../components/homeForm';
 import { Footer } from '../components/footer';
-import { ServicesHome } from '../components/servicesSection';
-import { Parceiros } from '../components/parceirosSection';
-import { BlogSection } from '../components/blogSection';
+import { MenuMobile } from '../components/menuMobile';
 
-import BannerImage from '../assets/banner-home.jpg';
+import styles from '../styles/BlogPage.module.css';
 
-import styles from '../styles/Home.module.css';
-
-export default function Home({ posts }) {
+export default function Blog ({ posts }){
   console.log(posts)
   const router = useRouter();
   const [ mappedPosts, setMappedPosts ] = useState([]);
@@ -47,53 +36,38 @@ export default function Home({ posts }) {
   }, [posts])
 
   return (
-    <>
-    <Head>
-      <title>Carvalhaço Reciclagem</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <div className={styles.pageBlog}>
+      <Head>
+        <title>Carvalhaço Reciclagem - Blog</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Menu />
       <MenuMobile />
-      <div className={styles.banner}>
-        <Image className={styles.bannerImg} src={BannerImage} />
-      </div>
-      <div className={styles.bannerMobile}>
-      <Image className={styles.bannerImgMobile} src={BannerImage} />
-      </div>
-      <EmpresaSection />
-      <FormHome />
-      <ServicesHome />
+      <h1>Blog</h1>
       <div className={styles.blog}>
         <div className={styles.blogContent}>
-          <h2>Nossas postagens</h2>
-          <div className={styles.feed}>
-            {mappedPosts.length ? mappedPosts.slice( 1, 4 ).map((p, index) => (
+          <div className={styles.pageFeed}>
+            {mappedPosts.length ? mappedPosts.map((p, index) => (
               <div onClick={() => router.push(`/post/${p.slug.current}`)} key={p.title} className={styles.post}>              
                 <img src={p.mainImage} className={styles.mainImage} />
                 <div className={styles.cardTxt}>
                   <h3>{p.title}</h3>
-                  <p>{p.desc.length > 150 ? p.desc.substr(0, 150) + "..." : p.desc}</p>
                   <span className={styles.postDate}>{new Date(p.publishedAt).toLocaleDateString()}</span>
                   <div className={styles.cardBottom}>                  
                     <span>{p.catego}</span>
-                    <span>{p.author.substr(0, 20) + "..."}</span>
+                    <span>{p.author}</span>
                   </div>
+                  <p>{p.desc.length > 150 ? p.desc.substr(0, 150) + "..." : p.desc}</p>
                 </div>
               </div>
             )) : <>No Posts Yet</>}
           </div>
-        <Link href="/blog">
-          <a className={styles.blogButton}>
-            <button>Veja todos as publicações</button>
-          </a>
-        </Link>
         </div>
       </div>
-      <Parceiros />
       <Footer />
-    </>
+    </div>
   )
-};
+}
 
 export const getServerSideProps = async pageContext => {
   const query = encodeURIComponent('*[ _type == "post"]');

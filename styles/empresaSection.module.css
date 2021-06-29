@@ -1,6 +1,6 @@
 .empresasection {
   background-color: #F1F1F1;
-  padding: 5rem 0;
+  padding: 5rem 1rem;
 }
 .empresacontent {
   max-width: 1200px;
@@ -13,6 +13,7 @@
 .empresacontentTxt {
   color: #313131;
   max-width: 45%;
+  margin-right: 2rem;
 }
 .empresacontentTxt h2 {
   font-size: 2.8rem;
@@ -34,7 +35,29 @@
   text-transform: uppercase;
   font-family: "Montserrat";
   border-radius: 10px;
+  cursor: pointer;
 }
 .imageEmpresa {
   box-shadow: 0 3px 5px rgba(0,0,0,.3);
+}
+
+@media screen and (max-width: 980px){
+  .empresacontent {
+    flex-direction: column;
+  }
+  .empresacontentTxt {
+    margin: 0 0 3rem 0;
+    max-width: unset;
+    text-align: center;
+    line:
+  }
+}
+
+@media screen and (max-width: 420px){
+  .empresacontentTxt h2 {
+    font-size: 2rem;
+  }
+  .empresacontentTxt p {
+    line-height: 2;
+  }
 }

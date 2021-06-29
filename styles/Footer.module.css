@@ -1,0 +1,107 @@
+.Footer {
+  background-color: #0E448D;
+  color: #ffffff;
+}
+.footerRowOne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem 1rem 1rem;
+  border-bottom: 2px solid #ffffff;
+}
+.footerRowOne p:first-child{
+  max-width: 250px;
+  width: 100%;
+  text-align: justify;
+}
+.footerNav {
+  text-align: center;
+  margin: 0 20px;
+}
+.footerNav ul {
+  display: flex;
+  justify-content: space-around;
+}
+.footerNav a {
+  font-weight: bold;
+  margin: 10px;
+  font-size: 1.1rem;
+  padding-bottom: 5px ;
+  border-bottom: 1px solid transparent;
+}
+.footerNav a:hover {
+  border-bottom: 1px solid #ffffff;
+}
+.ContactRow {
+  display: flex;
+  align-items: center;
+}
+.ContactRow p {
+  font-size: 0.9rem;
+}
+.ContactRow svg {
+  margin-right: .5rem;
+  font-size: 2rem;
+}
+.footerRowTwo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 3rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.footerRowTwo p {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.socialMediaFooter {
+  display: flex;
+}
+.socialMediaFooter a {
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  padding: .5rem;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 100ms ease-in;
+}
+.socialMediaFooter a:hover {
+  background-color: #ffffff;
+}
+.socialMediaFooter a:hover > svg {
+  color: #0E448D;
+}
+.socialMediaFooter svg {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 980px){
+  .footerRowOne {
+    flex-direction: column;
+  }
+  .footerRowOne p:first-child {
+    margin: 2rem 0 3rem;
+  }
+  .footerRowTwo {
+    flex-direction: column;
+  }
+  .footerRowTwo p {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .footerNav ul {
+    flex-direction: column;
+    border-top: 1px solid rgb(255, 255, 255, .3);
+    border-bottom: 1px solid rgb(255, 255, 255, .3);
+  }
+}

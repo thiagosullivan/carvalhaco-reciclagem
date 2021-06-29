@@ -1,27 +1,11 @@
 import { useState, useEffect } from 'react';
-
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import Link from 'next/link';
 import imageUrlBuilder from '@sanity/image-url';
-import BlockContent from '@sanity/block-content-to-react';
-
-import { Menu } from '../components/menu';
-import { MenuMobile } from '../components/menuMobile';
-import { EmpresaSection } from '../components/empresaSection';
-import { FormHome } from '../components/homeForm';
-import { Footer } from '../components/footer';
-import { ServicesHome } from '../components/servicesSection';
-import { Parceiros } from '../components/parceirosSection';
-import { BlogSection } from '../components/blogSection';
-
-import BannerImage from '../assets/banner-home.jpg';
 
 import styles from '../styles/Home.module.css';
 
-export default function Home({ posts }) {
+export const BlogSection = ({ posts }) => {
   console.log(posts)
   const router = useRouter();
   const [ mappedPosts, setMappedPosts ] = useState([]);
@@ -47,23 +31,7 @@ export default function Home({ posts }) {
   }, [posts])
 
   return (
-    <>
-    <Head>
-      <title>Carvalhaço Reciclagem</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-      <Menu />
-      <MenuMobile />
-      <div className={styles.banner}>
-        <Image className={styles.bannerImg} src={BannerImage} />
-      </div>
-      <div className={styles.bannerMobile}>
-      <Image className={styles.bannerImgMobile} src={BannerImage} />
-      </div>
-      <EmpresaSection />
-      <FormHome />
-      <ServicesHome />
-      <div className={styles.blog}>
+    <div className={styles.blog}>
         <div className={styles.blogContent}>
           <h2>Nossas postagens</h2>
           <div className={styles.feed}>
@@ -82,16 +50,13 @@ export default function Home({ posts }) {
               </div>
             )) : <>No Posts Yet</>}
           </div>
-        <Link href="/blog">
-          <a className={styles.blogButton}>
-            <button>Veja todos as publicações</button>
-          </a>
-        </Link>
+          <Link href="/blog">
+            <a className={styles.blogButton}>
+              <button>Veja todos as publicações do Blog</button>
+            </a>
+          </Link>
         </div>
-      </div>
-      <Parceiros />
-      <Footer />
-    </>
+    </div>
   )
 };
 

@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+
 import { Menu } from '../components/menu';
-import styles from '../styles/Obrigado.module.css';
+import { MenuMobile } from "../components/menuMobile";
 import { BiLeftArrowAlt } from 'react-icons/bi';
+import { Footer } from "../components/footer";
+
+import styles from '../styles/Obrigado.module.css';
 
 export default function Obrigado(){
   return (
@@ -12,6 +16,7 @@ export default function Obrigado(){
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Menu />
+      <MenuMobile />
       <main>
         <h1>Obrigado por enviar seu e-mail!</h1>
         <p>Retornaremos o mais breve possível.</p>
@@ -22,6 +27,7 @@ export default function Obrigado(){
           </a>
         </Link>
       </main>
+      <Footer />
     </div>
   )
 };

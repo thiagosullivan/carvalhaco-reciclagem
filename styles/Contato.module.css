@@ -1,13 +1,15 @@
 .form {
   max-width: 920px;
   width: 100%;
-  margin: 2rem auto;
+  margin: 4rem auto;
   background-color: #F1F1F1;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,.2);
 }
 .form textarea {
   height: 150px;
+  width: 100% !important;
+  resize: none;
 }
 .form input,
 .form textarea {
@@ -94,4 +96,15 @@
 }
 .loading span {
   margin-bottom: .5rem;
+}
+
+@media screen and (max-width: 980px){
+  .form {
+    margin: 3rem auto;
+    max-width: unset;
+    width: 90%;
+  }
+  .form h1 {
+    font-size: 1.5rem;
+  }
 }

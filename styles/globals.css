@@ -10,6 +10,10 @@ input, button, textarea {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+ul {
+  padding: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -38,4 +42,54 @@ a {
 
 @keyframes spin {
   to{ transform: rotate(360deg);}
+}
+
+.mobileactive {
+  height: 90px;
+}
+.mobileactive > div {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 99;
+}
+.mobileactive nav {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0vw);
+  transition: all 300ms ease-in;
+  overflow-y: hidden;
+}
+.menuHamburger {
+  border-top: 4px solid #002A5B;
+  width: 30px;
+  display: block;
+  margin: 1.5rem;
+  position: relative;
+  transition: all 150ms ease-in;
+  cursor: pointer;
+}
+.menuHamburger::before, .menuHamburger::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #002A5B;
+  margin-top: 5px;
+  transition: all 300ms ease-in;
+  position: relative;
+}
+.mobileactive .menuHamburger{
+  border-top-color: transparent;
+  transition: all 150ms ease-in;
+}
+.mobileactive .menuHamburger::before{
+  transform: rotate(135deg);
+}
+.mobileactive .menuHamburger::after{
+  transform: rotate(-135deg);
+  top: -9px;
 }

@@ -1,0 +1,78 @@
+.pageBlog h1 {
+  text-align: center;
+  margin: 3rem 0;
+}
+.pageBlog .blog {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.pageBlog .post {
+  display: flex;
+  margin: 3rem 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  border-radius: 20px;
+  background-color: #F1F1F1;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+}
+.pageBlog .post:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 10px rgba(0,0,0,.5);
+}
+.pageBlog .mainImage {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #FFFFFF;
+}
+.pageBlog .cardTxt {
+  padding: 1rem 2rem 1rem;
+}
+.pageBlog .cardTxt p:last-child {
+  color: #363636;
+}
+.pageBlog .cardTxt h3 {
+  font-size: 2rem;
+  color: #0E448D;
+  margin-bottom: 1rem;
+}
+.pageBlog .cardTxt .postDate {
+  font-size: 0.9rem;
+  color: #717171;
+}
+.pageBlog .cardTxt .cardBottom {
+  margin: 1.2rem 0 2rem;
+}
+.pageBlog .cardTxt .cardBottom span {
+  background-color: #0E448D;
+  padding: 10px;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+.pageBlog .cardTxt .cardBottom span:first-child {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 780px){
+  .pageBlog .post {
+    flex-direction: column;
+    max-width: 80%;
+    margin: 2rem auto;
+  }
+  .pageBlog .mainImage {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+  }
+  .pageBlog .cardTxt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .pageBlog .post {
+    max-width: 90%;
+  }
+}

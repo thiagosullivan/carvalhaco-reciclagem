@@ -17,6 +17,12 @@
   margin: 0 1rem;
   font-weight: bold;
   font-size: 1rem;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: all 100ms ease-in;
+}
+.nav a:hover {
+  border-bottom: 2px solid #0E448D;
 }
 .socialMedia svg {
   color: #0E448D;
@@ -27,4 +33,13 @@
   height: 35px;
   padding: 5px;
   margin: 5px;
+}
+.socialMedia svg:hover {
+  box-shadow: 0 3px 5px rgba(0,0,0,.5);
+}
+
+@media screen and (max-width: 980px){
+  .headerContent {
+    display: none;
+  }
 }

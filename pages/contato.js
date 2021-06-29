@@ -1,8 +1,10 @@
-import Head from "next/head";
-import { Menu } from "../components/menu";
-import styles from '../styles/Contato.module.css';
-import router, { useRouter } from "next/router";
 import { useState } from "react";
+import Head from "next/head";
+import router, { useRouter } from "next/router";
+import { Menu } from "../components/menu";
+import { MenuMobile } from "../components/menuMobile";
+import { Footer } from '../components/footer';
+import styles from '../styles/Contato.module.css';
 
 export default function Contato() {
   const [ loading, setLoading ] = useState(false);
@@ -56,6 +58,7 @@ export default function Contato() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Menu />
+      <MenuMobile />
       <form onSubmit={handleSubmit} className={styles.form} id='form'>
         <h1>Formulário de Contato</h1>
         <div className={styles.formContent}>
@@ -113,6 +116,7 @@ export default function Contato() {
         ) : ''}
         
       </form>
+      <Footer />
     </>
   )
 };
